@@ -10,7 +10,7 @@ class Reservation extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['date', 'time'];
+    protected $fillable = ['customer_id', 'package_id', 'date', 'time'];
 
     public function package(): BelongsTo
     {

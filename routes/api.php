@@ -26,3 +26,4 @@ Route::get('/places', [PlaceController::class, 'index']);
 Route::get('/packages/{place_id}', [PackageController::class, 'index']);
 Route::get('/reservations/{package_id}/{date}', [ReservationController::class, 'index']);
 Route::post('reservations', [ReservationController::class, 'store']);
+Route::get('1/reservations', [ReservationController::class, 'show']);

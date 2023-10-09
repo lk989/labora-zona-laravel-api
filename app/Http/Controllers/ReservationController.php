@@ -20,13 +20,20 @@ class ReservationController extends Controller
     }
 
     public function store(){
-        $c = Reservation::create(
+        Reservation::create(
             request()->validate([
-                'customerId' => 'required',
-                'packageId' => 'required',
+                'customer_id' => 'required',
+                'package_id' => 'required',
                 'date' => 'required',
                 'time' => 'required',
             ])
         );
+    }
+
+    public function show() {
+        
+        $reservations = Reservation::where('customer_id', 1)->get();
+    
+        return response()->json($reservations);
     }
 }
